@@ -5,6 +5,7 @@ include: "/views/**/*.view"
 
 #testing
 
+#testing as user without deploy
 datagroup: tatty_advanced_deploy_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
