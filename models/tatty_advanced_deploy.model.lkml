@@ -3,6 +3,8 @@ connection: "thelook"
 # include all the views
 include: "/views/**/*.view"
 
+#dean testing
+
 #testing
 datagroup: tatty_advanced_deploy_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
