@@ -4,7 +4,7 @@ connection: "thelook"
 include: "/views/**/*.view"
 
 #testing
-
+#testing to see if this will mess with the non-deploy user
 datagroup: tatty_advanced_deploy_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
