@@ -38,6 +38,13 @@ view: products {
     sql: ${TABLE}.retail_price ;;
   }
 
+  dimension: retail_price_tier  {
+    type: tier
+    tiers:[10,20,30,40,50,60]
+    style: relational
+    sql: ${TABLE}.retail_price  ;;
+  }
+
   dimension: sku {
     type: string
     sql: ${TABLE}.sku ;;

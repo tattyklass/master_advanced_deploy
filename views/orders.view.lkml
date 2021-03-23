@@ -17,10 +17,44 @@ view: orders {
       week,
       month,
       quarter,
-      year
+      year,
+      week_of_year
     ]
     sql: ${TABLE}.created_at ;;
   }
+
+    dimension_group: current_compair {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      week_of_year
+    ]
+    datatype: date
+    sql: DATE_ADD(DATE(current_date()), INTERVAL -300 WEEK) ;;
+  }
+
+  dimension_group: current {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+      week_of_year
+    ]
+    datatype: timestamp
+    sql: current_date() ;;
+  }
+
 
   dimension: status {
     type: string

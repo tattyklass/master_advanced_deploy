@@ -13,6 +13,11 @@ view: inventory_items {
     sql: ${TABLE}.cost ;;
   }
 
+  dimension: current_date{
+    type: date
+    sql: {{ 'now' | date: "%Y"}} ;;
+  }
+
   dimension_group: created {
     type: time
     timeframes: [
