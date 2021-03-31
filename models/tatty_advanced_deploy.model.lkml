@@ -1,6 +1,6 @@
 connection: "thelook"
 
-# include all the views
+# include all the views #test
 include: "/views/**/*.view"
 
 #testing
