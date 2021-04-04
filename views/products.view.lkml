@@ -23,6 +23,42 @@ view: products {
     sql: ${TABLE}.department ;;
   }
 
+  #TESTING, STRING AND NUMBER
+  dimension: catagory_without_special_chars{
+    type: string
+    sql: CASE WHEN ${category} LIKE '%a%' THEN 'a'
+              WHEN ${category} LIKE '%e%' THEN 'b'
+    ELSE 'other'
+    END;;
+  }
+
+  dimension: catagory_with_special_chars_num{
+    type: string
+    sql: CASE WHEN ${category} LIKE '%a%' THEN '1% to 2%'
+              WHEN ${category} LIKE '%e%' THEN '2% to 3%'
+    ELSE "4%+"
+    END;;
+  }
+
+  #TEST
+
+  dimension: catagory_without_special_chars_num{
+    type: string
+    sql: CASE WHEN ${category} LIKE '%a%' THEN 1
+              WHEN ${category} LIKE '%e%' THEN 2
+    ELSE 3
+    END;;
+  }
+
+  # CONTROL
+  dimension: no_change_control{
+    type: string
+    sql: CASE WHEN ${category} LIKE '%a%' THEN 1
+              WHEN ${category} LIKE '%e%' THEN 2
+    ELSE 3
+    END;;
+  }
+
   dimension: item_name {
     type: string
     sql: ${TABLE}.item_name ;;
